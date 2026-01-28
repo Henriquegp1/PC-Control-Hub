@@ -1,0 +1,39 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Ambientes Virtuais (Essenciais para ignorar)
+venv/
+.venv/
+env/
+ENV/
+
+# PyInstaller (Arquivos de build e o executável final)
+build/
+dist/
+*.spec
+
+# Logs e Dados temporários
+*.log
+startup_backup.json
+# (Apenas ignore o backup se não quiser que suas configurações pessoais subam)
+
+# IDEs
+.vscode/
+.idea/
+
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Arquivos gerados e binários grandes
+repo-backup.bundle
+*.pak
+# Ignorar binários/execs gerados
+*.dll
+*.exe
+
+# PySide / Qt (evitar commitar bibliotecas grandes e arquivos temporários)
+.venv/ 
+venv/
