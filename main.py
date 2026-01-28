@@ -49,10 +49,18 @@ class MainWindow(QMainWindow):
 
         # Tenta carregar um ícone personalizado se existir
         icon_path = resource_path("icon.ico")
+        print(f"Tentando carregar ícone de: {icon_path}")
+        print(f"O arquivo existe? {os.path.exists(icon_path)}")
         if os.path.exists(icon_path):
             self.setWindowIcon(QIcon(icon_path))
         else:
-            self.setWindowIcon(self.style().standardIcon(QStyle.StandardPixmap.SP_ComputerIcon))
+            # Tenta caminho alternativo direto
+            alt_path = os.path.join(os.path.dirname(__file__), "assets", "icon.ico")
+            print(f"Tentando caminho alternativo: {alt_path}")
+            if os.path.exists(alt_path):
+                self.setWindowIcon(QIcon(alt_path))
+            else:
+                self.setWindowIcon(self.style().standardIcon(QStyle.StandardPixmap.SP_ComputerIcon))
             
         main_layout = QHBoxLayout()
         main_layout.setSpacing(0)
